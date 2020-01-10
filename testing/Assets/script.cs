@@ -1,32 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+
 public class script : MonoBehaviour
 {
-    public string[] phrases;
-    public int num;
-    public bool mode;
-    public TextMeshProUGUI text;
+    public int number;
+
     // Start is called before the first frame update
     void Start()
     {
-        mode = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mode == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            text.text = phrases[Random.Range(0, 9)];
-            mode = false;
+            number += 1;
+            Debug.Log(number);
         }
-    }
-
-    public void ButtonPressed()
-    {
-        mode = true;
     }
 }
